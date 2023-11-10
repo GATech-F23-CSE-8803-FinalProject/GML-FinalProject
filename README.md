@@ -34,3 +34,13 @@ Protein GO-term/EC-number Score GO-term/EC-number name
 query_prot GO:0005509 0.99999 calcium ion binding
 ### Saving predictions to *.json file...
 ```
+- I've added a [prediction data explorer notebook](https://github.com/khiner/DeepFRI/blob/master/predict_explore.ipynb) to my fork.
+- Train
+  * _Notes:_ Tried to run train script, but it failed due to zero train/validation set size. This turned out to be because the TFRecords files were missing. I modified the `data_collection.sh` script in my fork.
+  However, this led to other issues that I'm still resolving, since I'm using a newer `Biopython` version:
+    ```ImportError: Bio.Alphabet has been removed from Biopython. In many cases, the alphabet can simply be ignored and removed from scripts. In a few cases, you may need to specify the ``molecule_type`` as an annotation on a SeqRecord for your script to work correctly. Please see https://biopython.org/wiki/Alphabet for more information.```
+  * Run:
+```shell
+$ cd preprocessing && ./create_tfrecords.sh
+$ python train_DeepFRI.py -h
+```
