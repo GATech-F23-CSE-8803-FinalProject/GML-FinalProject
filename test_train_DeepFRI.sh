@@ -27,7 +27,7 @@ test_list=./preprocessing/data/nrPDB-EC_2020.04_test.csv
 #     cmap_data=*
 # fi
 
-# For "--train_tfrecord_fn ...", set the parameter for where you're tfrecord is. Same for "valid_tfrecord_fn".
+# For "--train_tfrecord_fn ...", set the parameter for where you're tfrecords are. Same for "valid_tfrecord_fn".
 echo $annot
 python train_DeepFRI.py \
     -gcd ${graph_conv_dims} \
@@ -39,7 +39,7 @@ python train_DeepFRI.py \
     -ont ${ontology} \
     --cmap_type ca \
     --cmap_thresh ${cmap_thresh} \
-    --train_tfrecord_fn ${data_dir}${cmap_data}-${annot}_train/PDB_EC_train_00-of-15.tfrecords \  
-    --valid_tfrecord_fn ${data_dir}${cmap_data}-${annot}_valid/PDB_EC_valid_00-of-02.tfrecords \
+    --train_tfrecord_fn ${data_dir}${cmap_data}-${annot}_train/PDB_EC_train \  
+    --valid_tfrecord_fn ${data_dir}${cmap_data}-${annot}_valid/PDB_EC_valid \
     --annot_fn ${annot_fn} \
     --test_list ${test_list} \
