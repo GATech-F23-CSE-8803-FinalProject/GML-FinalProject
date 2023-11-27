@@ -34,7 +34,6 @@ python train_DeepFRI.py \
     -fcd ${fully_connected_dims} \
     -l2 2e-5 \
     -lr 0.0002 \
-    -gc ${graph_conv_layer} \
     -e 50 \
     -ont ${ontology} \
     --cmap_type ca \
