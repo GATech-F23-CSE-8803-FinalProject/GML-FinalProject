@@ -7,7 +7,6 @@ from torch.utils.data import Dataset, DataLoader
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
-import tfrecord
 from tfrecord.torch.dataset import TFRecordDataset
 import numpy as np
 
